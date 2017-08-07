@@ -1,0 +1,99 @@
+.TH passmenu-autotype 1 "2017 August 8" "Version 1.0.0" "User Commands"
+
+
+.SH NAME
+passmenu-autotype - a dmenu-based interface to password-store to copy and autotype credentials.
+
+
+.SH SYNOPSIS
+.B passmenu-autotype
+[ --type
+[ --userfield
+.I userfield-name
+]] [ dmenu arguments...]
+
+.SH DESCRIPTION
+
+.BR passmenu-autotype(1)
+is a
+.BR dmenu (1)
+based interface to
+.BR pass (1)
+allowing the user to autotype credentials or just simply copy the password.
+Autotype is accomplished using
+.BR xdotool (1).
+.B passmenu-autotype
+requires a consistent username label to be used in the metadata section
+of the password file but is flexible in terms of what this label is.
+
+
+.SH OPTIONS
+.TP
+\fB-\-type\fP
+.br
+Autotype the password once a selection is made
+.TP
+\fB-\-userfield\fP \fIuserfield-name\fP
+Autotype the username as well as the password. The
+.I userfield-name
+must match the label/key of a line in the metadata section of the password file.
+See EXAMPLES below.
+
+
+.SH EXAMPLES
+Given a password file of the following format:
+.P
+.B some-account.gpg
+.RS
+someRLYg0odp4ssw0rd
+.br
+username: matt-snider
+.RE
+
+Executing the following would reuslt in the username being type, tab being pressed, and then the password being typed:
+.RS
+.BR passmenu-autotype --type --userfield username [dmenu arguments...]
+.RE
+
+
+.SH SEE ALSO
+.BR pass (1)
+.BR dmenu (1)
+.BR xdotool (1)
+
+
+.SH AUTHOR
+matt-snider
+
+
+.SH HOME
+.I https://github.com/matt-snider/passmenu-autotype
+
+
+.SH REPORTING BUGS
+.I https://github.com/matt-snider/passmenu-autotype/issues
+
+
+.SH LICENSE
+
+MIT License
+
+Copyright (c) 2017 Matt Snider
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
