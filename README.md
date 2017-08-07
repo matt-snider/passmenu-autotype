@@ -1,10 +1,10 @@
 # passmenu-autotype
-An extension for [pass](https://www.passwordstore.org/) that allows autotyping credentials using a password selected using dmenu.
+A [dmenu](http://tools.suckless.org/dmenu/)-based interface to [pass](https://www.passwordstore.org/) that allows copying and autotyping credentials.
 
-In comparison to [passmenu](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu), this extension will type both the username and password.
+In comparison to [passmenu](https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu), this script will type both the username and password.
 
 # Usage
-`passmenu-autotype` accepts the same arguments as passmenu, but additionally supports `--userfield` which should indicate the field name in the password file where the username can be found.
+`passmenu-autotype` accepts the same arguments as passmenu, but additionally supports `--userfield` which should indicate the field name in the metadata section of the password file where the username can be found.
 
     passmenu-autotype [--type [--userfield fieldname]] [dmenu arguments...]
 
